@@ -48,9 +48,9 @@ let webpackConfig = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'app/index.html'),
         }),
-        new OpenBrowserPlugin({
-            url: 'http://127.0.0.1:8000'
-        }),
+        // new OpenBrowserPlugin({
+        //     url: 'http://127.0.0.1:8000'
+        // }),
     ],
     devServer: {
         historyApiFallback: true,
