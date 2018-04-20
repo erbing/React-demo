@@ -9,6 +9,10 @@ React-base-demo
 
 ## React api components
 
+` Tips: `
+
+    在 react 中组件api ： 组件生命周期、组件方法、组件数据流.
+
 ## React api router
 
 ## React api redux
