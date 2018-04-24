@@ -7,6 +7,7 @@ import Clock from './components/Clock'
 import OnClick from './components/OnClick'
 import IfRender from './components/IfRender'
 import SanMu from './components/SanMu'
+import StopRenderCpt from './components/StopRenderCpt'
 
 const Element = ()=>{
     return (
@@ -20,6 +21,7 @@ const Element = ()=>{
             <OnClick />
             <IfRender />
             <SanMu />
+            <StopRenderCpt />
         </div>
     )
 }

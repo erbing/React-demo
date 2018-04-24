@@ -1,3 +1,9 @@
+/**
+ * 组件: 三目条件渲染
+ * 功能: 测试 React 的三目条件渲染问题
+ * 结果: 测试成功
+ */
+
 import React from "react"
 
 export default class SanMu extends React.Component {
