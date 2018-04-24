@@ -8,6 +8,7 @@ import OnClick from './components/OnClick'
 import IfRender from './components/IfRender'
 import SanMu from './components/SanMu'
 import StopRenderCpt from './components/StopRenderCpt'
+import List from './components/List'
 
 const Element = ()=>{
     return (
@@ -22,6 +23,7 @@ const Element = ()=>{
             <IfRender />
             <SanMu />
             <StopRenderCpt />
+            <List />
         </div>
     )
 }
