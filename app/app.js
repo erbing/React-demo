@@ -6,6 +6,7 @@ import CompProp from './components/Prop'
 import Clock from './components/Clock'
 import OnClick from './components/OnClick'
 import IfRender from './components/IfRender'
+import SanMu from './components/SanMu'
 
 const Element = ()=>{
     return (
@@ -18,6 +19,7 @@ const Element = ()=>{
             <Clock time="6000"/>
             <OnClick />
             <IfRender />
+            <SanMu />
         </div>
     )
 }
