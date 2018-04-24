@@ -13,6 +13,8 @@ React-base-demo
 
     在 react 中组件api ： 组件生命周期、组件方法、组件数据流.
 
+    在 react 组件的 状态共享  即 state 提升方法研究。
+
 ## React api router
 
     在 react-router 中的 api
