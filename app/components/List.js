@@ -15,7 +15,7 @@
      }
 
      render() {
-         const items = this.state.curArr.map((item) =>
+         const items = this.state.curArr.map((item) => 
              <li key={item}>{item * 1.5}</li>
          )
          
