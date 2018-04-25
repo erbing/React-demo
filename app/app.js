@@ -11,6 +11,8 @@ import StopRenderCpt from './components/StopRenderCpt'
 import List from './components/List'
 import Form from './components/Form'
 
+import Tisheng from './components/Tisheng'
+
 const Element = ()=>{
     return (
         <div>
@@ -26,6 +28,7 @@ const Element = ()=>{
             <StopRenderCpt />
             <List />
             <Form />
+            <Tisheng />
         </div>
     )
 }
