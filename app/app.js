@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 
+import Header from './common/Header'
+import Main from './common/Main'
 // import Hello from './components/Hello'
 // import CompProp from './components/Prop'
 // import Clock from './components/Clock'
