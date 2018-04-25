@@ -7,8 +7,21 @@
 import React from 'react'
 
 const scaleNames = {
-    c: 'Celsius',
-    f: 'Fahrenheit'
+    c: '摄氏度',
+    f: '华氏温度'
+}
+
+const handleM = (v) => v ? + v : ''
+
+const toC = (f) => {
+    // if (Number.isNaN(f)) return ''
+    return (handleM(f) - 32) * 5 / 9
+}
+
+const toF = (c) => {
+    console.log(c, 'xxx')
+    if (c == '') return ''
+    return (handleM(c) - 32) * 5 / 9
 }
 
 const ChargeTmp = (props) => {
@@ -22,30 +35,72 @@ const ChargeTmp = (props) => {
     )
 }
 
-const TwoInput = (props) => {
-    const scale = props.scale
-    const handleChange = (e) => {
-        console.log(e.target.value)
+class TwoInput extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            scale: props.scale,
+            temp: props.temp
+        }
+        this.handleChange = this.handleChange.bind(this)
     }
-    return (
-        <div>
-            <h4>Enter temperature in {scaleNames[scale]}:</h4>
-            <input value={props.tmp} onChange={handleChange} />
-        </div>
-    )
+
+    handleChange(e) {
+        this.props.onTempChange(e.target.value)
+    }
+
+    render() {
+        const scale = this.props.scale
+        const temp = this.props.temp
+        return (
+            <fieldset>
+                <legend>Enter temperature in {scaleNames[scale]}:</legend>
+                <input value={temp} onChange={this.handleChange} />
+            </fieldset>
+        )
+    }
 }
+
+
 
 export default class Tisheng extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            temp : '',
+            scale: 'c'
+        }
+        this.handleC = this.handleC.bind(this)
+        this.handleF = this.handleF.bind(this)
+    }
+
+    handleC(c) {
+        console.log('this is handleC', c)
+        this.setState({
+            scale: 'c',
+            temp: c
+        })
+    }
+
+    handleF(f) {
+        console.log('this is handleF', f)
+        this.setState({
+            scale: 'f',
+            temp: f
+        })
     }
 
     render() {
+        const scale = this.state.scale
+        const temp = this.state.temp
+        const tempC = scale === 'f' ? toC(temp) : temp
+        const tempF = scale === 'c' ? toF(temp) : temp
+
         return (
             <div>
-                <TwoInput />
-                <ChargeTmp tmp="100" />
+                <TwoInput scale='c' temp={tempC} onTempChange={this.handleC}/>
+                <TwoInput scale='f' temp={tempF} onTempChange={this.handleF}/>
+                <ChargeTmp tmp={temp} />
             </div>
         )
     }

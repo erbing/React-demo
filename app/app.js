@@ -18,7 +18,7 @@ const Element = ()=>{
         <div>
             <h1>Hello, world </h1>
             <Hello />
-            <CompProp name="hahahha" age="123123"/>
+            {/* <CompProp name="hahahha" age="123123"/>
             <Clock time="2000"/>
             <Clock time="4000"/>
             <Clock time="6000"/>
@@ -27,7 +27,7 @@ const Element = ()=>{
             <SanMu />
             <StopRenderCpt />
             <List />
-            <Form />
+            <Form /> */}
             <Tisheng />
         </div>
     )
