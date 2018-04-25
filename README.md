@@ -18,6 +18,8 @@ React-base-demo
     在 react 组件的 状态共享  即 state 提升方法研究。
     
     在 react 组价中 调用 props.children 类似于 vue 中的 $solt
+    
+    react 更加倾向于 组件的 组合， 不提倡 组件的 继承
     
 ## React api router
 
