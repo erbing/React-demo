@@ -15,6 +15,10 @@ React-base-demo
 
     在 react 组件的 状态共享  即 state 提升方法研究。
 
+    在 react 组件的 状态共享  即 state 提升方法研究。
+    
+    在 react 组价中 调用 props.children 类似于 vue 中的 $solt
+    
 ## React api router
 
     在 react-router 中的 api
