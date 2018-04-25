@@ -12,6 +12,8 @@ import List from './components/List'
 import Form from './components/Form'
 
 import Tisheng from './components/Tisheng'
+import SplitPane from './components/SplitPane'
+
 
 const Element = ()=>{
     return (
@@ -29,6 +31,7 @@ const Element = ()=>{
             <List />
             <Form /> */}
             <Tisheng />
+            <SplitPane />
         </div>
     )
 }
