@@ -13,7 +13,7 @@ import Form from './components/Form'
 
 import Tisheng from './components/Tisheng'
 import SplitPane from './components/SplitPane'
-
+import PropsChildren from './components/PropsChildren'
 
 const Element = ()=>{
     return (
@@ -32,6 +32,7 @@ const Element = ()=>{
             <Form /> */}
             <Tisheng />
             <SplitPane />
+            <PropsChildren />
         </div>
     )
 }
