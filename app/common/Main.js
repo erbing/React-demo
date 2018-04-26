@@ -1,4 +1,5 @@
 import React from 'react'
+import { Switch, Route, Link } from 'react-router-dom'
 
 const Home = (props) => (
     <div>
@@ -9,6 +10,7 @@ const Home = (props) => (
 const Roster = (props) => (
     <div>
         this is index pages
+        <li> <Link to={'/msg/123'}> msg </Link></li>
     </div>
 )
 
@@ -18,13 +20,20 @@ const Schedule = (props) => (
     </div>
 )
 
-import { Switch, Route } from 'react-router-dom'
+const Number = (props) => (
+    <div>
+        this is Number pages and this is my prama id : {props.match.params.id}
+    </div>
+)
+
+
 const Main = () => (
   <main>
     <Switch>
       <Route exact path='/' component={Home}/>
       <Route path='/index' component={Roster}/>
       <Route path='/my' component={Schedule}/>
+        <Route path='/msg/:id' component={Number}/>
     </Switch>
   </main>
 )
