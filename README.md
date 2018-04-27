@@ -24,6 +24,8 @@ React-base-demo
 ## React api router
 
     在 react-router 中的 api
+    
+    在 router 中需要主要地方
 
 ## React api redux
 
