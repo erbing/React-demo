@@ -29,7 +29,12 @@ let webpackConfig = {
             }, 
             {
                 test: /\.css/,
-                loader: ['style-loader', 'css-loader'],
+                loaders: ['style-loader', {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true
+                    }
+                }]
             }, 
             {
                 test: /\.(png|jpg)$/,

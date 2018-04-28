@@ -1,6 +1,8 @@
 import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
 
+import style from '../assets/less/index.less'
+
 const Home = (props) => (
     <div>
         this is home pages
