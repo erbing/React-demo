@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo</title>
+</head>
+<body>
+
+    <h3>
+        H5 文件上传 
+    </h3>
+    
+    <input type="file" accept="image/*" capture="camera"  id="files" />
+
+
+    <script>
+    
+        // 处理问题的 方案
+        // 1、 input 的 type=file 然后 accept=image 并且设置  capture="camera" 
+        // 2、 然后 手动监听 input 的 onchange 事件
+        // 3、 监听 到 数据变化的时候 使用 html5 的 fileReader 方法
+
+
+
+        var inputdom = document.getElementById('files')
+
+        inputdom.addEventListener('input', readfile, false)
+
+        function readfile() {
+            var file =  this.files[0]
+            console.log(file)
+            var reader = new FileReader()
+            reader.readAsDataURL(file)
+            reader.onload = function(e) {
+                base64Code = this.result
+                console.log(base64Code)
+            }
+        }
+    </script>
+</body>
+</html>

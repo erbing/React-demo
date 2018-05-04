@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>input demo one</title>
+</head>
+<body>
+    
+    
+    <input type="file" accept="image/*" capture="camera"  id="files" />
+
+    <canvas id="canvas" width="320" height="240"></canvas>
+
+    <script>
+        window.onload = (function() {
+            var files = ''
+            var inputdom = document.getElementById('files')
+            var canvas =document.getElementById('canvas'),
+                context = canvas.getContext('2d')
+
+            inputdom.addEventListener('input', function(e) {
+                var curfile = e.target.files[0]
+
+                var reader = new FileReader();
+
+                reader.onload = function() {
+                    console.log(this, 1122)
+                    var result = this.result
+                    var img = new Image()
+                    img.src = result;
+                    alert(123)
+                    reader.readAsDataURL(curfile)
+                }
+
+                console.log(curfile)
+                context.drawImage(curfile, 0, 0, 640, 480)
+                var imgData = canvans.toDataURL('image/jpeg', 0.2);  //  获取图片的base64格式的数据
+                console.log(imgData)
+            })
+
+            function compress(img) {
+                
+            }
+        })()
+    </script>
+
+</body>
+</html>
