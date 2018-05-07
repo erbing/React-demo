@@ -41,7 +41,7 @@
     }, false);
 
     document.getElementById("snap")
-            .addEventListener("click", function() {//获取拍照按钮绑定事件
+            .addEventListener("click", function() { //获取拍照按钮绑定事件
                 var canvans = document.getElementById("canvas"),//调用canvas接口
                         context = canvas.getContext("2d");
                 context.drawImage(video, 0, 0, 640, 480);//调用canvas接口的drawImage方法绘制当前video标签中的静态图片，其实就是截图
