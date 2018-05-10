@@ -49,6 +49,8 @@
                     var data = drawCanvas(imgUrl)
                     upload(data)
                     imgUrl = null
+                    console.log(this.inputdom.value, 'xxxxx')
+                    this.inputdom.value = ''
                 }
             }
         }
@@ -106,7 +108,7 @@
             console.log('压缩率：' + ~~(100 * (initSize - ndata.length) / initSize) + "%");
             img = null
             tCanvas.width = tCanvas.height = canvas.width = canvas.height = 0;
-            console.log(ndata)
+            // console.log(ndata)
             return ndata;
         }
 
