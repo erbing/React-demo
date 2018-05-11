@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 
 import Header from './common/Header'
 import Main from './common/Main'
+
+import reducer from './redux/'
 // import Hello from './components/Hello'
 // import CompProp from './components/Prop'
 // import Clock from './components/Clock'
