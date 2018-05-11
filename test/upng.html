@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo</title>
+</head>
+<body>
+    
+    <h3>
+        H5 文件上传 
+    </h3>
+    
+    <input type="file" accept="image/*" capture="camera"  id="files" />
+    <!-- <canvas id="canvas" width="0" height="0"></canvas> -->
+    <img src="" id="showIMG"/>
+
+    <script src="../lib/UPNG.js"></script>
+
+    <script>
+        
+        var inputDom = document.getElementById('files')
+        console.log(window.UPNG)
+        
+        inputDom.addEventListener('input', files, false)
+
+        function files(e) {
+            console.log(e)
+            var file =  this.files[0]
+            var reader = new FileReader()
+            reader.onload = function() {
+                var base64Code = this.result
+                var imgUrl = new Image()
+                imgUrl.src = base64Code
+                document.getElementById('showIMG').src = imgUrl.src 
+                if (imgUrl.complete) {
+                    callback() 
+                } else {
+                    imgUrl.onload = callback;
+                }
+                function callback() {
+                    var data = drawCanvas(imgUrl)
+                    upload(data)
+                    imgUrl = null
+                }
+            }
+            reader.readAsDataURL(file)
+        }
+
+        function drawCanvas(img) {
+            let canvas = document.createElement('canvas')
+            document.body.appendChild(canvas)
+            let ctx = canvas.getContext('2d')
+            let width = img.width
+            let height = img.height
+
+            ctx.drawImage(img, 0, 0, width, height)
+            var dta = ctx.getImageData(0,0,width,height).data;
+            var testimg = window.UPNG.encode(dta.buffer);
+
+            console.log(dta, 'dta')
+            console.log(dta.buffer, dta.buffer.byteLength,'dta.buffer')
+            console.log(testimg, 'encodeimg')
+
+            console.log(window.UPNG.decode(testimg), 'decodeimg')
+
+            let nDate = canvas.toDataURL('image/jpeg', 0.1)
+            
+            console.log(img.src.length)
+            console.log(nDate.length)
+            return nDate
+        }
+
+        function upload(img) {
+            console.log(' ')
+        }
+    </script>
+
+</body>
+</html>
