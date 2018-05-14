@@ -4,6 +4,8 @@ import { Switch, Route, Link } from 'react-router-dom'
 import style from '../assets/less/index.less'
 import styleMain from '../assets/less/main.less'
 
+import Index from '../pages/index'
+
 const Home = (props) => (
     <div className="router">
         this is home pages
@@ -17,11 +19,7 @@ const Roster = (props) => (
     </div>
 )
 
-const Schedule = (props) => (
-    <div className="router">
-        this is my pages
-    </div>
-)
+const Schedule = Index
 
 const Number = (props) => (
     <div className="router">
