@@ -40,7 +40,7 @@ const initState = {
  */
 
 const store = createStore(reducer, initState)
-
+// console.log('app-store', store)
 
 const APP = () => (
     <div>
@@ -58,9 +58,9 @@ const Element = ()=>{
 }
 
 ReactDom.render((
-    <Provider store={store}>
-        <BrowserRouter>
+    <BrowserRouter>
+        <Provider store={store}>
             <APP />
-        </BrowserRouter>
-    </Provider>
+        </Provider>
+    </BrowserRouter>
 ), document.getElementById('apps'))

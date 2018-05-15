@@ -23,8 +23,17 @@ import Test2 from '../../components/test2'
 // }
 
 const Index = (props) => {
+    console.log('index---props', props.state)
+    let card = props.state.card
+    let dialog = props.state.dialog
+    console.log('dialog--states', dialog.status)
     return (
-        <h2 className="propClass">hello. props = {props.name} + ages = {props.avator}</h2>
+        <div>
+            <h2 className="propClass">hello. name = {card.name} + ages = {card.avator} + dialog = { dialog.status ? '111' : '000' }</h2>
+            <button onClick={props.changeName}>change name</button>
+            <p></p>
+            <button onClick={props.showDialog}>show dialog</button>
+        </div>
     )
 }
 
@@ -40,21 +49,32 @@ const Index = (props) => {
 //     }
 // })
 
-function mapStateToProps(state) {
-    return state
+const mapStateToProps = (state) => {
+    console.log(state, 'mapStateToProps')
+    // const {card, dialog} = state
+    return { state }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps  = (dispatch) => {
     return {
         changeName() {
             dispatch({
                 type: "CHANGE_NAME",
-                name: 'xxx'
+                card: {
+                    name: 'xxx---changing',
+                    avator: 'b.jpg---changing'
+                },
+                dialog: {
+                    status:  true
+                }
             })
         },
         showDialog() {
             dispatch({
-                type: 'SHOW_DIALOG'
+                type: 'SHOW_DIALOG',
+                dialog: {
+                    status:  true
+                }
             })
         }
     }
